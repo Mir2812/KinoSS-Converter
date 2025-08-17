@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinoSS Converter</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/film-reel.png">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6fa; margin: 0; }
+        .container { max-width: 400px; margin: 60px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 32px; }
+        h2 { text-align: center; color: #222; margin-bottom: 24px; }
+        input[type='text'] { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
+        button { width: 100%; padding: 12px; background: #4f8cff; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #357ae8; }
+        .result { margin-top: 24px; text-align: center; }
+        .result a { color: #4f8cff; font-weight: bold; word-break: break-all; }
+        .footer { text-align: center; margin-top: 32px; color: #aaa; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kino URL-ni SS ga o‘zgartirish</h2>
+        <form id="ssForm">
+            <input type="text" id="urlInput" placeholder="Kinopoisk URL kiriting" required>
+            <button type="submit">O‘zgartirish</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <div class="footer">© 2025 KinoSS Converter</div>
+    <script>
+        document.getElementById('ssForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var url = document.getElementById('urlInput').value;
+            if(url) {
+                var newUrl = url.replace('kino', 'ss');
+                document.getElementById('result').innerHTML = '<p>Natija:</p><a href="'+newUrl+'" target="_blank">'+newUrl+'</a><p>Avtomatik o‘tmoqda...</p>';
+                setTimeout(function(){ window.location.href = newUrl; }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>
