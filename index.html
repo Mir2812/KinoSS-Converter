@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinoSS Converter</title>
-    <link rel="icon" href="https://img.icons8.com/color/48/film-reel.png">
+    <title>FilmLink Switcher</title>
+    <link rel="icon" href="film-link-logo.svg">
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6fa; margin: 0; }
         .container { max-width: 400px; margin: 60px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 32px; }
-        h2 { text-align: center; color: #222; margin-bottom: 24px; }
+        h1 { text-align: center; color: #222; margin-bottom: 8px; }
+        .logo { display: block; margin: 0 auto 16px auto; width: 64px; height: 64px; }
+        .desc { text-align: center; color: #555; margin-bottom: 24px; font-size: 15px; }
         input[type='text'] { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
         button { width: 100%; padding: 12px; background: #4f8cff; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.2s; }
         button:hover { background: #357ae8; }
         .result { margin-top: 24px; text-align: center; }
         .result a { color: #4f8cff; font-weight: bold; word-break: break-all; }
         .footer { text-align: center; margin-top: 32px; color: #aaa; font-size: 13px; }
+        .usage { background: #eaf0fb; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; color: #333; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Kino URL-ni SS ga o‘zgartirish</h2>
+        <img src="film-link-logo.svg" alt="FilmLink Switcher Logo" class="logo">
+        <h1>FilmLink Switcher</h1>
+        <div class="desc">Kinopoisk film sahifasi URL-ni tezda o‘zgartiring va ko‘ring</div>
+        <div class="usage">
+            <b>Foydalanish yo‘riqnomasi:</b><br>
+            1. Kinopoiskdan faqat film sahifasining URL manzilini kiriting.<br>
+            2. "O‘zgartirish" tugmasini bosing.<br>
+            3. Natija avtomatik yangi sahifaga o‘tadi.<br>
+            <i>Masalan:</i> <span style="color:#4f8cff">https://www.kinopoisk.ru/film/4934962/</span>
+        </div>
         <form id="ssForm">
-            <input type="text" id="urlInput" placeholder="Kinopoisk URL kiriting" required>
+            <input type="text" id="urlInput" placeholder="Kinopoisk film sahifasi URL kiriting" required>
             <button type="submit">O‘zgartirish</button>
         </form>
         <div class="result" id="result"></div>
     </div>
-    <div class="footer">© 2025 KinoSS Converter</div>
+    <div class="footer">© 2025 FilmLink Switcher</div>
     <script>
         document.getElementById('ssForm').addEventListener('submit', function(e) {
             e.preventDefault();
